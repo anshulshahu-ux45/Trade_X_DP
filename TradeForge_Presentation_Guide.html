@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TradeForge — Design Pattern Lab Presentation & Viva Guide</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 18mm 15mm 18mm 15mm;
+        }
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+            color: #1e293b;
+            background: #ffffff;
+            line-height: 1.55;
+            font-size: 10.5pt;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            color: #1e3a8a;
+            font-size: 24pt;
+            margin: 0 0 5px 0;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+        .header .subtitle {
+            color: #64748b;
+            font-size: 12pt;
+            font-weight: 600;
+            margin: 0 0 10px 0;
+        }
+        .meta-badges {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 8px;
+        }
+        .badge {
+            background: #eff6ff;
+            color: #1d4ed8;
+            border: 1px solid #bfdbfe;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 8.5pt;
+            font-weight: 700;
+            display: inline-block;
+        }
+        .diagram-container {
+            text-align: center;
+            margin: 20px 0 25px 0;
+            page-break-inside: avoid;
+        }
+        .diagram-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+            border: 1px solid #cbd5e1;
+        }
+        .diagram-caption {
+            font-size: 9pt;
+            color: #64748b;
+            margin-top: 6px;
+            font-style: italic;
+        }
+        h2 {
+            color: #0f172a;
+            font-size: 14pt;
+            border-left: 4px solid #2563eb;
+            padding-left: 10px;
+            margin-top: 24px;
+            margin-bottom: 12px;
+            font-weight: 700;
+            page-break-after: avoid;
+        }
+        h3 {
+            color: #1e293b;
+            font-size: 11.5pt;
+            margin-top: 16px;
+            margin-bottom: 6px;
+            font-weight: 700;
+            page-break-after: avoid;
+        }
+        p {
+            margin: 0 0 10px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 14px 0 20px 0;
+            font-size: 9pt;
+            page-break-inside: avoid;
+        }
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 7px 10px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            background-color: #f1f5f9;
+            color: #0f172a;
+            font-weight: 700;
+        }
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+        .speech-box {
+            background: #f8fafc;
+            border-left: 4px solid #3b82f6;
+            padding: 10px 14px;
+            border-radius: 0 6px 6px 0;
+            margin: 10px 0 14px 0;
+            font-style: italic;
+            color: #334155;
+            page-break-inside: avoid;
+        }
+        .action-label {
+            font-weight: 700;
+            color: #1d4ed8;
+            font-style: normal;
+            display: block;
+            margin-bottom: 4px;
+        }
+        .qna-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 10px 14px;
+            margin-bottom: 12px;
+            page-break-inside: avoid;
+        }
+        .qna-question {
+            font-weight: 700;
+            color: #1e3a8a;
+            margin-bottom: 4px;
+        }
+        .qna-answer {
+            color: #334155;
+            margin: 0;
+        }
+        .page-break {
+            page-break-before: always;
+        }
+        ul {
+            margin: 6px 0 12px 20px;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 4px;
+        }
+        .footer-note {
+            margin-top: 30px;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 10px;
+            font-size: 8.5pt;
+            color: #94a3b8;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>TRADEFORGE</h1>
+        <div class="subtitle">Design Pattern Lab Project — Viva & Presentation Guide</div>
+        <div class="meta-badges">
+            <span class="badge">Java 11 Desktop Application</span>
+            <span class="badge">Java Swing GUI</span>
+            <span class="badge">MVC Architecture</span>
+            <span class="badge">10 GoF Design Patterns</span>
+            <span class="badge">JDBC + MySQL</span>
+            <span class="badge">Maven Build</span>
+        </div>
+    </div>
+
+    <h2>1. Executive Summary & Architecture</h2>
+    <p>
+        <strong>TradeForge</strong> is an academic stock trading simulation built using <strong>Java 11</strong>, <strong>Java Swing</strong>, <strong>MVC Architecture</strong>, <strong>JDBC</strong>, and <strong>MySQL</strong>. The application demonstrates exactly <strong>10 Gang of Four (GoF) design patterns</strong> working in an integrated, authentic desktop workflow.
+    </p>
+
+    <div class="diagram-container">
+        <img src="tradeforge_architecture.jpg" alt="TradeForge Architecture Diagram">
+        <div class="diagram-caption">Figure 1: Complete TradeForge Architecture — MVC Layers & 10 Design Patterns Mapping</div>
+    </div>
+
+    <h2>2. Complete Design Patterns Mapping Table</h2>
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 5%;">#</th>
+                <th style="width: 15%;">Pattern</th>
+                <th style="width: 12%;">Type</th>
+                <th style="width: 28%;">Primary Classes</th>
+                <th style="width: 40%;">Concrete Responsibility in TradeForge</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td><strong>Singleton</strong></td>
+                <td>Creational</td>
+                <td><code>DatabaseConnection</code></td>
+                <td>Provides a shared, thread-safe JDBC connection manager across the application lifecycle to avoid memory leaks.</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><strong>Factory</strong></td>
+                <td>Creational</td>
+                <td><code>TransactionFactory</code>, <code>BuyTransaction</code>, <code>SellTransaction</code></td>
+                <td>Instantiates BUY or SELL transaction objects to calculate 2% brokerage charges and net totals dynamically.</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><strong>Proxy</strong></td>
+                <td>Structural</td>
+                <td><code>TradingServiceProxy</code>, <code>RealTradingService</code></td>
+                <td>Protection proxy: verifies user authentication and ownership before delegating trade execution.</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><strong>Chain of Resp.</strong></td>
+                <td>Behavioral</td>
+                <td><code>Tier1AgentHandler</code>, <code>Tier2AgentHandler</code>, <code>Tier3AgentHandler</code></td>
+                <td>Routes orders to broker agents based on quantity: 1–500 (Agent 1), 501–700 (Agent 2), &gt;700 (Agent 3). Plus a validation chain.</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td><strong>Observer</strong></td>
+                <td>Behavioral</td>
+                <td><code>StockTradingSubject</code>, <code>UserNotificationObserver</code></td>
+                <td>Broadcasts trade completion events in real time to update the dashboard's top notification banner.</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td><strong>Builder</strong></td>
+                <td>Creational</td>
+                <td><code>TradeBuilder</code></td>
+                <td>Fluent, step-by-step assembly of <code>TradingRequest</code> objects with strict field validation before execution.</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td><strong>Mediator</strong></td>
+                <td>Behavioral</td>
+                <td><code>TradingMediator</code></td>
+                <td>Central hub that coordinates the Controller, Proxy, Chains, Template Method, DAOs, and Observers, achieving loose coupling.</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td><strong>Template Method</strong></td>
+                <td>Behavioral</td>
+                <td><code>TradingTemplate</code>, <code>BuyTradingWorkflow</code>, <code>SellTradingWorkflow</code></td>
+                <td>Enforces an invariant 5-step trade sequence (validate &rarr; check &rarr; execute &rarr; save &rarr; notify) with customized hooks inside an ACID transaction.</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td><strong>Memento</strong></td>
+                <td>Behavioral</td>
+                <td><code>TradeMemento</code>, <code>TradeCaretaker</code></td>
+                <td>Captures and restores UI trade draft form values (Save Draft and Undo/Restore) without altering database state.</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td><strong>Prototype</strong></td>
+                <td>Creational</td>
+                <td><code>TradePrototype</code>, <code>TradingRequest</code></td>
+                <td>Deep-clones trade requests (Duplicate Trade) to create an independent editable draft without immediate database writes.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="page-break"></div>
+
+    <h2>3. Presentation Script for Mam (Step-by-Step Live Demo)</h2>
+
+    <h3>Step 1: Introduction & Authentication (Singleton Pattern)</h3>
+    <div class="speech-box">
+        <span class="action-label">Action: Launch application (run.bat) & show Login screen.</span>
+        "Good morning/afternoon Mam. Today I am presenting <strong>TradeForge</strong>, a desktop stock trading simulation built using Java 11, Swing, MVC, JDBC, and MySQL. When launching the app, the <strong>Singleton Pattern</strong> initializes via <code>DatabaseConnection</code>, managing a single thread-safe connection to MySQL to avoid socket leaks. Credentials submitted on the login screen are processed by <code>LoginController</code> (MVC Controller layer) without hardcoding SQL in the GUI."
+    </div>
+
+    <h3>Step 2: Dashboard Overview (MVC Architecture)</h3>
+    <div class="speech-box">
+        <span class="action-label">Action: Log in with 'anshul' / '1234' and showcase the Dashboard.</span>
+        "Once authenticated, the MVC View layer (<code>DashboardFrame</code>) loads:
+        <ul>
+            <li>Available Account Balance (₹50,000.00).</li>
+            <li>Market Stock Catalog (<code>StocksPanel</code>).</li>
+            <li>User Portfolio Holdings (<code>PortfolioPanel</code>).</li>
+            <li>Interactive Trading Desk (<code>TradePanel</code>).</li>
+            <li>Completed Transactions Audit Log (<code>TransactionHistoryPanel</code>).</li>
+            <li>Real-time Observer Notification Banner at the top.</li>
+        </ul>"
+    </div>
+
+    <h3>Step 3: Chain of Responsibility (Dynamic Broker Agent Assignment)</h3>
+    <div class="speech-box">
+        <span class="action-label">Action: Switch to Trading Desk tab. Change the Quantity input:</span>
+        "Mam, here we demonstrate the <strong>Chain of Responsibility Pattern</strong>. Observe the dynamic Assigned Agent badge:
+        <ul>
+            <li>When quantity is <strong>100</strong> (1 to 500 stocks): handled by <strong>Agent 1 - Rahul Sharma (Tier 1)</strong>.</li>
+            <li>When quantity is changed to <strong>600</strong> (501 to 700 stocks): <code>Tier1AgentHandler</code> delegates down the chain to <strong>Agent 2 - Priya Patel (Tier 2)</strong>.</li>
+            <li>When quantity exceeds <strong>700</strong> (e.g., 850): delegates to <strong>Agent 3 - Amit Verma (Tier 3)</strong>.</li>
+        </ul>
+        In addition, a validation chain verifies account status, stock availability, and sufficient balance before execution."
+    </div>
+
+    <h3>Step 4: Factory Pattern (BUY vs. SELL Fee Calculations)</h3>
+    <div class="speech-box">
+        <span class="action-label">Action: Toggle between BUY and SELL radio buttons.</span>
+        "Here we demonstrate the <strong>Factory Pattern</strong> (<code>TransactionFactory</code>). When BUY is selected, <code>BuyTransaction</code> adds a 2% brokerage fee to the total cost. When SELL is selected, <code>SellTransaction</code> deducts the 2% fee from the proceeds. The GUI contains no business math; it simply invokes the Factory product."
+    </div>
+
+    <h3>Step 5: Memento Pattern (Save Draft State & Undo)</h3>
+    <div class="speech-box">
+        <span class="action-label">Action: Select INFY, BUY, 50. Click 'Save Draft (Memento)'. Change to WIPRO, SELL, 200. Click 'Undo / Restore (Memento)'.</span>
+        "This is the <strong>Memento Pattern</strong>. <code>TradeMemento</code> captures a snapshot of current form inputs and stores it in <code>TradeCaretaker</code>. When we alter the inputs and click 'Undo / Restore', the form values instantly revert to the saved snapshot. This restores the UI draft state without rolling back committed database transactions."
+    </div>
+
+    <h3>Step 6: Prototype Pattern (Duplicate Trade)</h3>
+    <div class="speech-box">
+        <span class="action-label">Action: Go to Market Stocks or History, select a row, and click 'Duplicate Selected Trade (Prototype)'.</span>
+        "This demonstrates the <strong>Prototype Pattern</strong>. <code>TradingRequest</code> implements <code>TradePrototype</code> to clone values from an existing holding or transaction record. It creates an independent, editable draft without inserting an immediate duplicate record in the database."
+    </div>
+
+    <h3>Step 7: Trade Execution Flow (Builder, Mediator, Proxy, Template, Observer)</h3>
+    <div class="speech-box">
+        <span class="action-label">Action: In Trading Desk, click 'Execute Order via TradeBuilder & Mediator'.</span>
+        "When executing the order, 5 patterns execute in harmony:
+        <ol>
+            <li><strong>Builder (<code>TradeBuilder</code>)</strong>: Validates and constructs the <code>TradingRequest</code>.</li>
+            <li><strong>Mediator (<code>TradingMediator</code>)</strong>: Decouples the Controller from backend subsystems.</li>
+            <li><strong>Proxy (<code>TradingServiceProxy</code>)</strong>: Verifies security and ownership before forwarding to <code>RealTradingService</code>.</li>
+            <li><strong>Template Method (<code>TradingTemplate</code>)</strong>: Runs the fixed 5-step trade sequence inside an ACID JDBC transaction.</li>
+            <li><strong>Observer (<code>StockTradingSubject</code>)</strong>: Notifies <code>UserNotificationObserver</code> upon success, updating the top banner in real time."</li>
+        </ol>
+    </div>
+
+    <div class="page-break"></div>
+
+    <h2>4. Top Viva Questions & Model Answers</h2>
+
+    <div class="qna-card">
+        <div class="qna-question">Q1: Why did you use the Mediator pattern instead of having the Controller coordinate everything?</div>
+        <p class="qna-answer"><strong>Answer:</strong> In a trading system, if the Controller directly invoked the Proxy, Builder, Factory, DAOs, Chain handlers, and Observers, it would become an overly complex "God Object" with high coupling. The <code>TradingMediator</code> centralizes this coordination so the Controller only interacts with a single, high-level interface.</p>
+    </div>
+
+    <div class="qna-card">
+        <div class="qna-question">Q2: How does your Proxy Pattern provide protection?</div>
+        <p class="qna-answer"><strong>Answer:</strong> <code>TradingServiceProxy</code> implements <code>TradingService</code> and acts as a security barrier. It checks: (1) user is authenticated (<code>userId &gt; 0</code>), (2) caller owns the request, and (3) request is not null. It rejects invalid requests with a <code>SecurityException</code> before any database queries execute.</p>
+    </div>
+
+    <div class="qna-card">
+        <div class="qna-question">Q3: What is the difference between Prototype and Memento in your app?</div>
+        <p class="qna-answer"><strong>Answer:</strong> <strong>Prototype</strong> creates a <em>new, independent clone</em> of an object with identical values for cloning or duplication. <strong>Memento</strong> captures an <em>internal state snapshot</em> of an existing object so it can be restored to that exact previous state later via Undo.</p>
+    </div>
+
+    <div class="qna-card">
+        <div class="qna-question">Q4: Why is the template method in <code>TradingTemplate</code> declared <code>final</code>?</div>
+        <p class="qna-answer"><strong>Answer:</strong> Because the Template Method pattern requires the core algorithm skeleton (validate &rarr; check availability &rarr; execute operation &rarr; save transaction &rarr; notify observers) to remain invariant. Declaring <code>processTrade(...)</code> as <code>final</code> prevents subclasses from altering the execution order, while allowing them to customize hook steps.</p>
+    </div>
+
+    <div class="qna-card">
+        <div class="qna-question">Q5: How does your system maintain database consistency during trades?</div>
+        <p class="qna-answer"><strong>Answer:</strong> Inside <code>RealTradingService</code>, we disable auto-commit (<code>connection.setAutoCommit(false)</code>). All four database mutations—user balance update, stock inventory update, portfolio holding update, and transaction record insertion—execute in a single JDBC transaction. If any error occurs, <code>connection.rollback()</code> is triggered, preserving ACID guarantees.</p>
+    </div>
+
+    <div class="qna-card">
+        <div class="qna-question">Q6: What are the exact Chain of Responsibility thresholds for Agent Assignment?</div>
+        <p class="qna-answer"><strong>Answer:</strong> 
+        <ul>
+            <li><strong>1 to 500 stocks:</strong> Agent 1 (Rahul Sharma — Tier 1)</li>
+            <li><strong>501 to 700 stocks:</strong> Agent 2 (Priya Patel — Tier 2)</li>
+            <li><strong>More than 700 stocks:</strong> Agent 3 (Amit Verma — Tier 3)</li>
+        </ul>
+        Each tier handler checks the condition; if it falls outside its range, it delegates to the next handler in the chain.</p>
+    </div>
+
+    <h2>5. Build & Verification Status</h2>
+    <p>
+        The project is fully compiled and tested using Apache Maven and JUnit 5:
+    </p>
+    <ul>
+        <li><strong>Compilation:</strong> <code>mvn compile</code> &mdash; 51 source files compiled with 0 errors.</li>
+        <li><strong>Unit Tests:</strong> <code>mvn test</code> &mdash; 9 comprehensive test cases covering all 10 patterns passed with <strong>0 failures, 0 errors</strong>.</li>
+        <li><strong>Executable Package:</strong> Standalone executable JAR built at <code>target/tradeforge.jar</code>.</li>
+    </ul>
+
+    <div class="footer-note">
+        TradeForge — Design Pattern Lab Project | BTech CSE | Java Swing & MySQL
+    </div>
+
+</body>
+</html>
